@@ -9,7 +9,6 @@ class Booking(models.Model):
 
   def __str__(self):
       return self.name
-  
 
 class Menu(models.Model):
   title = models.CharField(max_length=255)
@@ -17,4 +16,4 @@ class Menu(models.Model):
   inventory = models.PositiveIntegerField(validators=[MaxValueValidator(5)])
 
   def __str__(self):
-     return self.title
+     return f'{self.title} : {str(self.price)}'
